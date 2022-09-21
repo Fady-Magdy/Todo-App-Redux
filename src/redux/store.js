@@ -1,13 +1,8 @@
-import { configureStore } from '@reduxjs/toolkit'
-import todolistSlice from './todolistSlice'
-import userSlice from './userSlice'
+import { configureStore } from "@reduxjs/toolkit";
+import todolistSlice from "./todolistSlice";
 
 export const store = configureStore({
-    reducer: {
-        user: userSlice,
-        todolist: todolistSlice
-    }
-})
-
-
-
+  reducer: {
+    todolist: todolistSlice,
+  },
+});

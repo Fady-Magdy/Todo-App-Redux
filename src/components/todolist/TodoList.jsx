@@ -69,9 +69,9 @@ const TodoList = () => {
           }}
         >
           {editMode ? (
-            <i class="fa-solid fa-pen-to-square"></i>
+            <i className="fa-solid fa-pen-to-square"></i>
           ) : (
-            <i class="fa-solid fa-plus"></i>
+            <i className="fa-solid fa-plus"></i>
           )}
         </button>
         <select

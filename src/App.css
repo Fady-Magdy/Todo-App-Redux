@@ -15,11 +15,27 @@ body {
   background: linear-gradient(60deg, rgb(33, 44, 66), rgb(15, 19, 29));
   min-height: 100vh;
 }
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(30deg, rgb(160, 209, 255), rgb(17, 81, 255));
+}
+.image {
+  width: 60px;
+}
+.image img {
+  width: 100%;
+}
+nav i {
+  font-size: 60px;
+  color: rgb(126, 203, 255);
+}
 .app-title {
   text-align: center;
   font-size: 50px;
   color: #fff;
-  background: linear-gradient(30deg, rgb(130, 194, 255), rgb(0, 47, 177));
+
   margin: 0;
   padding: 30px;
 }
