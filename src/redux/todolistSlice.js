@@ -24,18 +24,32 @@ const todolistSlice = createSlice({
       saveToLocalStorage(state);
     },
     setComplete: (state, action) => {
-      state.list[action.payload].complete =
-        !state.list[action.payload].complete;
+      state.list[action.payload - 1].complete =
+        !state.list[action.payload - 1].complete;
       saveToLocalStorage(state);
     },
     editItem: (state, action) => {
       state.list[action.payload.id - 1].value = action.payload.value;
       saveToLocalStorage(state);
     },
+    refreshItems: (state) => {
+      let count = 0;
+      state.list = state.list.map((item) => {
+        count++;
+        return { ...item, id: count };
+      });
+      saveToLocalStorage(state);
+    },
   },
 });
 
-export const { addItem, removeItem, clearList, setComplete, editItem } =
-  todolistSlice.actions;
+export const {
+  addItem,
+  removeItem,
+  clearList,
+  setComplete,
+  editItem,
+  refreshItems,
+} = todolistSlice.actions;
 
 export default todolistSlice.reducer;

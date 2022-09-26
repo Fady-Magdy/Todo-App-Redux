@@ -7,6 +7,7 @@ import {
   clearList,
   setComplete,
   editItem,
+  refreshItems,
 } from "../../redux/todolistSlice";
 const TodoList = () => {
   const { list } = useSelector((state) => state.todolist);
@@ -103,8 +104,7 @@ const TodoList = () => {
                 <div className="left">
                   <input
                     onClick={(e) => {
-                      dispatch(setComplete(item.id - 1));
-                      e.target.nextSibling.children[0].classList.toggle("on");
+                      dispatch(setComplete(item.id));
                     }}
                     defaultChecked={item.complete}
                     className="checkBox"
@@ -129,7 +129,7 @@ const TodoList = () => {
                   <button
                     className="btn check-btn"
                     onClick={(e) => {
-                      dispatch(setComplete(item.id - 1));
+                      dispatch(setComplete(item.id));
                     }}
                   >
                     <i className="fa-solid fa-check"></i>
@@ -155,6 +155,7 @@ const TodoList = () => {
                     className="btn delete-btn"
                     onClick={() => {
                       dispatch(removeItem(item.id));
+                      dispatch(refreshItems());
                     }}
                   >
                     <i className="fa-solid fa-trash"></i>
